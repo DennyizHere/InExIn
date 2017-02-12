@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+
+  "name": "InExIn",
+
+  "description": "Redirects dangerous pages to Wholesomememes",
+
+  "version": "1.0",
+
+  "background": {"scripts":["background.js","content.js"]},
+
+      "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+
+  "permissions": [
+    "webRequest",
+    "*://*.stormfront.org/*",
+    "webRequestBlocking"
+  ]
+}
+
